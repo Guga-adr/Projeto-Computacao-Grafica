@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class NPCInteractable : MonoBehaviour
+public class NPCInteractable1 : MonoBehaviour
 {
     public void Interact() {
-        SceneManager.LoadScene("Demo");
+        SceneManager.LoadScene("Fase1");
     }
 }

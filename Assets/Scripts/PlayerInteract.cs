@@ -17,17 +17,17 @@ public class PlayerInteract : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E)) {
             Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
             foreach (Collider collider in colliderArray) {
-                if(collider.TryGetComponent(out NPCInteractable npcInteractable)) {
+                if(collider.TryGetComponent(out NPCInteractable1 npcInteractable)) {
                     npcInteractable.Interact();
                 }
             }
         }
     }
 
-    public NPCInteractable GetInteractableObject() {
+    public NPCInteractable1 GetInteractableObject() {
         Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
         foreach (Collider collider in colliderArray) {
-            if(collider.TryGetComponent(out NPCInteractable npcInteractable)) {
+            if(collider.TryGetComponent(out NPCInteractable1 npcInteractable)) {
                 return npcInteractable;
             }
         }
