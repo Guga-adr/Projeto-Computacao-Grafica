@@ -6,6 +6,17 @@ using UnityEngine.SceneManagement;
 public class NPCInteractable1 : MonoBehaviour
 {
     public void Interact() {
-        SceneManager.LoadScene("Fase1");
+        string npcName = gameObject.name;
+        switch(npcName) {
+            case "Marry": {
+                SceneManager.LoadScene("Fase1");
+                break;
+            }
+            case "Kssiano": {
+                SceneManager.LoadScene("Fase2");
+                break;
+            }
+                
+        }
     }
 }
