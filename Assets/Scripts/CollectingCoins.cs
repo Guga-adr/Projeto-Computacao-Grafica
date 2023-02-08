@@ -7,9 +7,13 @@ public class CollectingCoins : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip[] audioClipArray;
     public AudioClip clipe;
+
+    [SerializeField] private GameObject Player;
+    [SerializeField] private GameObject SpawnPoint;
+
     public float volume = 1.0F;
 
-    public int corsas = 0;
+    public static int corsas;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,12 +27,33 @@ public class CollectingCoins : MonoBehaviour
     }
 
     public void OnTriggerEnter(Collider Col) {
+        //coleta de corsas
         if(Col.gameObject.tag == "Corsinha") {
             corsas = corsas + 1;
-            Debug.Log("Corsas capotados: " + corsas);
+            int som = (corsas-1)%3;
+            Debug.Log("Corsas capotados: " + corsas + "Som: " + som);
             Col.gameObject.SetActive(false);
-            //AudioSource.PlayClipAtPoint(audioClipArray[corsas-1], Camera.main.transform.position, volume);
-            audioSource.PlayOneShot(audioClipArray[corsas-1], volume);
+            audioSource.PlayOneShot(audioClipArray[som], volume);
         }
+        //interação com death planes
+        else if (Col.gameObject.tag == "DP") {
+            Debug.Log("Morte");
+            Respawn();
+        }
+        
+    }
+
+    void Respawn() {
+        Player.SetActive(false);
+        Debug.Log("Posição: " + Player.transform.position);
+        Player.transform.position = SpawnPoint.transform.position;
+        Player.SetActive(true);
+    }
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    static void OnBeforeSceneLoadRuntimeMethod()
+    {
+        corsas = 0;
+        Debug.Log("Corsas zerados");
     }
 }
