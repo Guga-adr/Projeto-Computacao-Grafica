@@ -12,5 +12,9 @@ public class Respawn : MonoBehaviour
         player.transform.position = respawnPoint.transform.position;
         
     }
+    public void Kill(Collider player)
+    {
+        player.transform.position = respawnPoint.transform.position;  
+    }
 }
 
