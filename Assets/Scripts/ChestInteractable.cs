@@ -8,6 +8,7 @@ public class ChestInteractable : MonoBehaviour
     public static int[] placas;
 
     void Start() {
+        placas = new int[3];
         placas[0] = 1; placas[1] = 1; placas[2] = 1;
     }
 
