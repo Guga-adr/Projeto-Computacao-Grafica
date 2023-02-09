@@ -20,6 +20,9 @@ public class PlayerInteract : MonoBehaviour
                 if(collider.TryGetComponent(out NPCInteractable1 npcInteractable)) {
                     npcInteractable.Interact();
                 }
+                if(collider.TryGetComponent(out ChestInteractable chestInteractable)) {
+                    chestInteractable.Interact();
+                }
             }
         }
     }

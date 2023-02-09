@@ -54,6 +54,5 @@ public class CollectingCoins : MonoBehaviour
     static void OnBeforeSceneLoadRuntimeMethod()
     {
         corsas = 0;
-        Debug.Log("Corsas zerados");
     }
 }

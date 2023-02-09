@@ -16,6 +16,10 @@ public class NPCInteractable1 : MonoBehaviour
                 SceneManager.LoadScene("Fase2");
                 break;
             }
+            case "Nicole": {
+                SceneManager.LoadScene("Fase3");
+                break;
+            }
         }
     }
 }
