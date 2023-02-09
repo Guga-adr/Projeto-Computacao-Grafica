@@ -5,13 +5,11 @@ using UnityEngine;
 public class SemaphoreTrigger : MonoBehaviour
 {
 
-  [SerializeField] private GameObject Texto;
   [SerializeField] private GameObject Semaforo;
   
     // Start is called before the first frame update
     void Start()
     {
-      Texto.SetActive(false);
       Semaforo.SetActive(false);
     }
 
@@ -20,15 +18,9 @@ public class SemaphoreTrigger : MonoBehaviour
     {
     }
 
-    void OnTriggerEnter(Collider col) {
-      if(col.gameObject.name == "Arisa") {
-        Texto.SetActive(true);
-      }
-    }
-
     void OnTriggerExit(Collider col) {
-      if(col.gameObject.name == "Arisa") {
-        Texto.SetActive(false);
+      if(col.gameObject.name == "Arisa (1)") {
+        Debug.Log("Saiu");
         Semaforo.SetActive(true);
       }
     }
