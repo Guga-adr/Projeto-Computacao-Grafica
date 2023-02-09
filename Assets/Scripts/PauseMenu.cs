@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
+
     void Pause() {
         //Player.SetActive(false);
         Contador.text = "x " + CollectingCoins.corsas;
@@ -42,9 +44,9 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void QuitGame() {
-        Debug.Log("Sair");
+        SceneManager.LoadScene("Playground");
     } 
     public void LoadMenu() {
-        Debug.Log("MenuCarregado");
+        SceneManager.LoadScene("Menu");
     }
 }

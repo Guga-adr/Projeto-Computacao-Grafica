@@ -6,7 +6,7 @@ public class CollectingCoins : MonoBehaviour
 {
     public AudioSource audioSource;
     public AudioClip[] audioClipArray;
-    public AudioClip clipe;
+    public AudioClip apito;
 
     [SerializeField] private GameObject Player;
     [SerializeField] private GameObject SpawnPoint;
@@ -37,7 +37,7 @@ public class CollectingCoins : MonoBehaviour
         }
         //interação com death planes
         else if (Col.gameObject.tag == "DP") {
-            Debug.Log("Morte");
+            audioSource.PlayOneShot(apito, volume);
             Respawn();
         }
         
