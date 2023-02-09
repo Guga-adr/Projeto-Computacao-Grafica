@@ -7,8 +7,6 @@ public class LightSwitch : MonoBehaviour
   private GameObject redLight;
   private GameObject yellowLight;
   private GameObject greenLight;
-  private GameObject semaphore;
-  private GameObject off;
   private float counter = 0f;
   public float waitTime = 6f;
     // Start is called before the first frame update
@@ -17,8 +15,6 @@ public class LightSwitch : MonoBehaviour
         redLight = GameObject.Find("Red Light");
         yellowLight = GameObject.Find("Yellow Light");
         greenLight = GameObject.Find("Green Light");
-        off = GameObject.Find("Off");
-        off.SetActive(true);
         redLight.SetActive(false);
         yellowLight.SetActive(false);
         greenLight.SetActive(false);
